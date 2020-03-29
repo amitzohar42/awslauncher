@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="region"><!-- Paste your region id here --></string>
+    <string name="instanceId"><!-- Paste your instance id here --></string>
+    <string name="access_key_id"><!-- Paste your access key id here --></string>
+    <string name="secret_access_key"><!-- Paste your secret access key here --></string>
+</resources>

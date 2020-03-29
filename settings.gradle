@@ -1,0 +1,2 @@
+rootProject.name='AwsLauncher'
+include ':app'
