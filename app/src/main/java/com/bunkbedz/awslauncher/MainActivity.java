@@ -1,17 +1,31 @@
+/*  AwsLauncher
+    Copyright (C) 2020  Amit Zohar
+    For contact: amitzohar42@gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
 package com.bunkbedz.awslauncher;
 
-import androidx.appcompat.app.AppCompatActivity;
-import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.ec2.model.InstanceStateName;
-
-import android.graphics.ColorFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import androidx.appcompat.app.AppCompatActivity;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.ec2.model.InstanceStateName;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView powerButton;
