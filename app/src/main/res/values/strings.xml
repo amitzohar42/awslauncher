@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AwsLauncher</string>
+    <string name="notification_title">Aws Server</string>
+    <string name="notification_text">AWS Server is running!</string>
+    <string name="notification_channel_id">AwsLauncher</string>
+    <string name="notification_channel_name">AwsLauncher Notifications</string>
+    <string name="notification_channel_description">Notifies you when your server is running, so you don\'t forget to close it.</string>
 </resources>

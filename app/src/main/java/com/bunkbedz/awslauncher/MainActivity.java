@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView powerButton;
     private AwsServer awsServer;
     private ExecutorService requestThread;
-    private InstanceStateName serverState = null;
+    private volatile InstanceStateName serverState = null;
+    private RunningNotificationManager runningNotificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         powerButton.setOnClickListener(new ButtonClickListener());
+
+        runningNotificationManager =
+                new RunningNotificationManager(this);
+        runningNotificationManager.createNotificationChannel();
     }
 
     private void updateButtonByState() {
@@ -81,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     case STOPPED:
                         serverState = InstanceStateName.PENDING;
                         updateButtonByState();
+                        runningNotificationManager.showNotification();
                         requestThread.execute(() -> {
                             awsServer.startServer();
                             serverState = InstanceStateName.RUNNING;
@@ -94,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                             awsServer.stopServer();
                             serverState = InstanceStateName.STOPPED;
                             updateButtonByState();
+                            runningNotificationManager.cancelNotification();
                         });
                         break;
                     case PENDING:
